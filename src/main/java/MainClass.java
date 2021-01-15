@@ -20,12 +20,12 @@ public class MainClass {
         RobotstxtServer robotstxtServer = new RobotstxtServer(robotstxtConfig, pageFetcher);
         CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
 
-        controller.addSeed("https://www.crawler-test.com/");
+        controller.addSeed("https://www.bbc.com/sport");
 
 //        CrawlController.WebCrawlerFactory<HtmlCrawler> factory = HtmlCrawler::new;
         CrawlerStatistics stats = new CrawlerStatistics();
 
-        String file_path = "D://msc/IR//crawler_data//mydata.txt";
+        String file_path = "D://msc/IR//crawler_data//bbc_sports.xml";
         File myObj = new File(file_path);
         if (myObj.createNewFile()) {
             System.out.println("File created: " + myObj.getName());

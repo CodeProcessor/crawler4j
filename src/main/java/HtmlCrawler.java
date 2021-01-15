@@ -25,7 +25,7 @@ public class HtmlCrawler extends WebCrawler {
     public boolean shouldVisit(Page referringPage, WebURL url) {
         String urlString = url.getURL().toLowerCase();
         return !EXCLUSIONS.matcher(urlString).matches()
-                && urlString.startsWith("https://www.crawler-test.com/");
+                && urlString.startsWith("https://www.bbc.com/sport");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class HtmlCrawler extends WebCrawler {
             stats.incrementTotalLinksCount(links.size());
             stats.incrementProcessedPageCount();
 
-            String write_this_text = "<DOC> <DOCNO> " + stats.getPageCount() + " </DOCNO> " + text + " </DOC>\n";
+            String write_this_text = "<DOC> <DOCNO> " + stats.getPageCount() + " </DOCNO> " + title + " </DOC>\n";
             try {
                 myWriter.write(write_this_text);
 
